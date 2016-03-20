@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Connect4</title>		
+		<link rel="shortcut icon" type="image/x-icon" href="http://storage.cloversites.com/oakhillbaptistchurch/site_images/page57_picture0_1333388848.jpg">
+	</head>
+	<body background="fondo.jpg" text="#FFFFFF">
+		<center>
+		<h1>Ranking</h1>
+		<img src="logo.png" alt="Logotipo Connect4" title="Logotipo Connect4"/>	
+	</center>
+		<hr>	
+		<table border = "3"  width="100%">
+		<tr>
+		<th>Nombre de usuario</th>
+		<th>Juegos ganados</th>
+		<th>Juegos jugados</th>
+		<th>Efectividad</th>
+		</tr>
+		{{#ranking}}
+		<tr>
+			<td>{{toStringu}}</td>
+			<td>{{toStringgw}}</td>
+			<td>{{toStringgp}}</td>
+			<td>{{toStringEff}}</td>
+		</tr>
+		{{/ranking}}
+			</table>
+			
+
+	</body>
+</html>
+

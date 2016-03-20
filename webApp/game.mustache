@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Connect4</title>		
+		<link rel="shortcut icon" type="image/x-icon" href="http://storage.cloversites.com/oakhillbaptistchurch/site_images/page57_picture0_1333388848.jpg">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+	</head>
+	<body background="fondo.jpg" text="#FFFFFF">
+		<center><img src="logo.png" alt="Logotipo Connect4" title="Logotipo Connect4"/></center>
+		<hr>
+	<center>	
+			
+	{{usuario1}}
+	{{usuario2}}
+	Turno: {{jugador}}
+	ID DE SESSION :{{SESSION_NAME}}
+	<form id="form1" action="/game" method="POST">
+		<input type="hidden"name="game_id" value={{current.game_id}} />
+		<input type="hidden" name="jugador" value={{jugador}}/>
+		<input type="hidden" name="usuario1" value={{usuario1}}/>
+		<input type="hidden" name="usuario2" value={{usuario2}}/>
+		<input type="hidden"name="columna1"  />	
+		<input type="submit" style="width:96px; height:25px" value="1" name="tirar0"   class="button"/>
+		<input type="submit" style="width:96px; height:25px" value="2" name="tirar1" class="button"/>
+		<input type="submit" style="width:96px; height:25px" value="3" name="tirar2" class="button"/>
+		<input type="submit" style="width:96px; height:25px" value="4" name="tirar3" class="button"/>
+		<input type="submit" style="width:96px; height:25px" value="5" name="tirar4" class="button"/>
+		<input type="submit" style="width:96px; height:25px" value="6" name="tirar5" class="button"/>
+		
+		
+	</form>	
+	
+	
+<script>
+	$("document").ready(function(){
+	  console.log("Esta empezando a cargar el javascript");
+     $(".button").on("click", function(ev){
+       console.log("hizo click en el primer boton");
+       
+       $.ajax({
+			url:"/game",
+			data: {"tirar": $(this).val(),"SESSION_NAME":{{SESSION_NAME}} },
+			method:"post"
+		 }).done(function(data){
+		    $("html").html(data);
+		    document.location.reload();	 
+		 });
+		 
+		 ev.preventDefault();
+		});
+	});
+	
+	</script>
+
+
+	
+
+
+
+
+
+	
+	{{{tablero}}}
+	
+		<div>
+		<form action="guardar" method="POST">
+				<input type=image src="guardar.png">
+		</form>
+		
+		
+	</div>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Connect4</title>		
+		<link rel="shortcut icon" type="image/x-icon" href="http://storage.cloversites.com/oakhillbaptistchurch/site_images/page57_picture0_1333388848.jpg">
+	</head>
+	<body background="fondo.jpg" text="#FFFFFF"><center>
+		<h1>Registro de Usuarios</h1>	
+		<img src="logo.png" alt="Logotipo Connect4" title="Logotipo Connect4"/>
+		<hr>
+		<h4>Nuevo Usuario</h4>
+		
+				
+		<form action="/nuevoregistro" method="POST">
+			  <LABEL for="nombre">Nombre: </LABEL>
+              <INPUT type="text" id="nombre"><BR>
+    			<LABEL for="apellido">Apellido: </LABEL>
+              <INPUT type="text" id="apellido"><BR>
+    <LABEL for="email">email: </LABEL>
+              <INPUT type="text" id="email"><BR>
+    <INPUT type="radio" name="sexo" value="Varón"> Varón<BR>
+    <INPUT type="radio" name="sexo" value="Mujer"> Mujer<BR>
+    <INPUT type="submit" value="Enviar"> <INPUT type="reset">
+				<label for="nuevoregistro"/>
+				<input type=image src="jugar.png">
+				
+				
+		</form>		
+			
+		<form action="/rank" method="POST">
+			
+				<label for="rank"/>
+				<input type=image src="ranking.png">
+		</form>
+
+		<form action="/creditos" method="POST">
+			
+			<input type=image src="creditos.png">
+		</form>
+		<hr>
+	</center>	
+	</body>
+</html>
